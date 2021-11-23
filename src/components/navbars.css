@@ -1,0 +1,88 @@
+/* .navbar{
+    height: 78px; */
+    /* width: 1560px; */
+    /* width: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    background: #022B32;
+    position: relative;
+} */
+/* .navbar-logo{
+    height: 27.30382537841797px;
+    width: 110px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+} */
+/* .navbar-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    height: 27.30382537841797px;
+    width: 351px;
+    left: 20px;
+    top: calc(50% - 27.3px/2 - 0.35px);
+} */
+
+/* .navbar-container ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+} */
+/* ul li a{
+    margin: 0px 55px;
+    position: static;
+    width: 46px;
+    height: 24px;
+    left: 165px;
+    top: 1.65px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal; 
+    font-size: 16px;
+    text-transform: uppercase;
+    flex: none;
+    flex-grow: 0;
+    color: #FFFFFF;
+    text-decoration: none;
+} */
+
+/* ul li a:hover{
+    text-decoration-line: underline;
+} */
+
+/* .active{
+    text-decoration-line: underline;
+} */
+
+/* converting styles to a Tailwindcss */
+
+.navbar {
+    @apply h-20 w-full left-0 top-0 bg-gray-800 relative rounded-none;
+}
+.navbar-logo {
+    @apply h-7 w-28 left-0 top-0 rounded-none;
+}
+.navbar-container {
+    top: calc(50% - 27.3px/2 - 0.35px);
+}
+.navbar-container {
+    @apply flex flex-row items-center p-0 absolute h-7 w-80 left-5;
+    /* @apply top-6; */ 
+}
+.navbar-container ul {
+    @apply list-none flex justify-around;
+}
+ul li a {
+    @apply mt-0 mx-14 static w-11 h-6 text-white uppercase no-underline;
+    /* not-italic font-normal text-base flex-grow-0*/
+}
+ul li a:hover {
+    @apply underline;
+}
+.active {
+    @apply underline;
+}

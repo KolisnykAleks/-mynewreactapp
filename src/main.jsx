@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.css'
 import App from './App'
 
 ReactDOM.render(
@@ -9,3 +8,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 )
+// import { createApp } from 'react'
+// import App from './App'
+// import './index.css'
+
+// createApp(App).mount('#app')

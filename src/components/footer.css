@@ -1,0 +1,28 @@
+/* .footer {
+    height: 78px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background: #022B32;
+    margin-top: auto;
+    flex-shrink: 0;
+ } */
+ /* .footer-container {
+     position: relative;
+     width: 145px;
+     height: 24px;
+     left: 29px;
+     top: calc(50% - 24px/2);
+ } */
+
+/* converting styles to a Tailwindcss */
+.footer {
+    @apply h-20 w-full bg-gray-800;
+}
+.footer-container {
+    @apply relative h-7 left-6;
+    /* w-36 h-7 */
+}
+.footer-container {
+    top: calc(50% - 24px/2);
+}
