@@ -1,9 +1,10 @@
 .page {
-  position: relative;
-  /* width: 1560px; */
+  position: relative; 
+  width: 1560px;
   max-width: 100%;
 }
-.page button {
+
+/* .page button {
   width: 68px;
   height: 68px;
   position: absolute;
@@ -20,6 +21,10 @@
   top: calc(50% - 68px/2);
   
   opacity: 0.5;
+} */
+.page button {
+  @apply w-16 h-16 bg-white border border-solid box-border border-gray-100 shadow-md rounded-full text-xl text-gray-400 font-bold absolute z-10 opacity-50;
+  top: calc(50% - 68px/2);
 }
 #prev {
   right: 4.8%;
@@ -36,6 +41,10 @@
   position: relative;
   max-width: 85%;
   margin: 0 auto; }
+/* .cards-slider {
+    @apply relative w-10/12 my-0 mx-auto;
+    max-width: 85%;
+} */
 .new-wrap {
   overflow: hidden;
   box-sizing: border-box;
@@ -48,6 +57,10 @@
   display: flex;
   transition: transform 300ms;
 }
+/* converting styles to a Tailwindcss */
+/* .page {
+  @apply relative max-w-full;
+} */
 @media (max-width:1520px) {
   .new-wrap {
     height: 490px;

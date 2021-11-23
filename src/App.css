@@ -13,9 +13,9 @@ body {
   min-height: 100vh;
 }
 
-.wrapper {
+/* .wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
+} */

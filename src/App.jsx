@@ -11,17 +11,12 @@ import React from 'react';
 function App() {
   return (
     <BrowserRouter>
-          <Navbar />
-       <Routes> 
-        {/* <Route path="Home/Products"  element={<Navbar />} /> */}
-          {/* <Route> */}
+      <Navbar />
+      <Routes> 
             <Route path="/"  element={<Home />} />
             <Route path="/products" element={<Products />}/>
-            {/* <Route path="/"  element={<Home />} /> */}
-          {/* </Route> */}
-          {/* <Route path="Home/Products" element={<Footer />} /> */}
       </Routes>
-          <Footer />
+      <Footer />
     </BrowserRouter>
   );
 }

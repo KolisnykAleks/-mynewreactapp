@@ -1,18 +1,18 @@
-.cards {
+/* .cards {
     left: 0px;
     right: 0px;
-    border-radius: 0px;
+    border-radius: 0px; */
     /* margin-top: 78px; */
-    min-height: 1258px;
+    /* min-height: 1258px;
     width: 100%;
     background: #E5E5E5;
     display: grid;
-}
-.cards-container {
+} */
+/* .cards-container {
     display: inline;
     padding-bottom: 187px;
-}
-.title {
+} */
+/* .title {
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -22,34 +22,34 @@
     color: #000000;
     margin-top: 118px;
     margin-left: 47px;
-}
-.cards-item {
+} */
+/* .cards-item {
     width: 350px;
     height: 474px;
     margin: 16px 15px 24px 15px;
     align-items: center;
-}
-.dog-grid {
+} */
+/* .dog-grid {
     display: grid;
     grid-template-columns: repeat(4, 350px);
     list-style: none;
     justify-content: space-around;
     padding: 25px;
-}
-@media (max-width:1520px) {
+} */
+/* @media (max-width:1520px) {
 .dog-grid {
     grid-template-columns: repeat(3, 350px);
     }
     .title {
         margin-left: 80px;
     }
-}
-@media (max-width:1170px) {
+} */
+/* @media (max-width:1170px) {
     .dog-grid {
         grid-template-columns: repeat(2, 350px);
         }
-}
-@media (max-width:820px) {
+} */
+/* @media (max-width:820px) {
     .dog-grid {
         grid-template-columns: repeat(1, 350px);
         }
@@ -60,18 +60,18 @@
             margin-top: 65px;
             text-align: center;
         }
-}
-.cards-item img{
+} */
+/* .cards-item img{
     max-width: 100%;
     height: 362px;
     object-fit: cover;
     margin: auto;
-}
-.item-text {
+} */
+/* .item-text {
     margin: 0 auto;
     width: 294px;
-}
-.item-subtitle {
+} */
+/* .item-subtitle {
     position: static;
     height: 20px;
     width: 294px;
@@ -89,8 +89,8 @@
     align-self: stretch;
     flex-grow: 0;
     margin: 8px 0px;
-}
-.item-descr {
+} */
+/* .item-descr {
     position: static;
     height: 56px;
     width: 294px;
@@ -108,4 +108,58 @@
     margin: 8px 0px;
     overflow: hidden;
     text-overflow: ellipsis;
+} */
+/* converting styles to a Tailwindcss */
+
+.cards {
+    @apply grid w-full left-0 right-0 rounded-none;
+    background: #E5E5E5;
+    min-height: 1258px;
+}
+.cards-container {
+    @apply inline pb-44;
+}
+.title {
+    @apply w-4/5 text-4xl mt-28 ml-12 not-italic font-bold;
+    line-height: 54px;
+}
+.cards-item {
+    @apply w-80 mx-4 mt-4 mb-10;
+    height: 474px;
+}
+.dog-grid {
+    @apply grid grid-cols-4 justify-around list-none p-6 justify-items-center;
+}
+@screen 2xl {
+    .dog-grid {
+        @apply grid grid-cols-3;
+    }
+}
+@screen xl {
+    .dog-grid {
+        @apply grid-cols-2;
+        }
+    .title {
+        @apply ml-24;
+    }
+}
+@screen md {
+    .dog-grid {
+        @apply grid-cols-1 text-3xl m-0;
+    }
+    .title {
+        @apply mt-16 text-center ml-0 w-full;
+    }
+}
+.cards-item img {
+    @apply max-w-full h-80 object-cover;
+}
+.item-text {
+    @apply w-4/5 m-0 mx-7;
+}
+.item-subtitle {
+    @apply h-5 not-italic font-semibold text-xs leading-7 text-gray-800 uppercase tracking-wide;
+}
+.item-descr {
+    @apply static h-14 w-72 left-0 top-0 not-italic font-bold text-lg self-stretch overflow-ellipsis leading-5 flex-none flex-grow-0 overflow-hidden top-0 mt-2;
 }
