@@ -1,8 +1,8 @@
-.page {
+/* .page {
   position: relative; 
   width: 1560px;
   max-width: 100%;
-}
+} */
 
 /* .page button {
   width: 68px;
@@ -22,10 +22,6 @@
   
   opacity: 0.5;
 } */
-.page button {
-  @apply w-16 h-16 bg-white border border-solid box-border border-gray-100 shadow-md rounded-full text-xl text-gray-400 font-bold absolute z-10 opacity-50;
-  top: calc(50% - 68px/2);
-}
 #prev {
   right: 4.8%;
 }
@@ -37,36 +33,28 @@
   box-shadow: 0px 5px 17px rgba(0, 0, 0, 0.1);
   border: 3px solid rgba(94, 100, 100, 0.349);
 }
-.cards-slider {
+/* .cards-slider {
   position: relative;
   max-width: 85%;
   margin: 0 auto; }
-/* .cards-slider {
-    @apply relative w-10/12 my-0 mx-auto;
-    max-width: 85%;
-} */
-.new-wrap {
+   */
+/* .new-wrap {
   overflow: hidden;
   box-sizing: border-box;
   display: block;
-  width: 100%; /* change */
+  width: 100%;
   height: 535px;
-  }
-
-.cards-slider-wrapper {
+  } */
+/* .cards-slider-wrapper {
   display: flex;
   transition: transform 300ms;
-}
-/* converting styles to a Tailwindcss */
-/* .page {
-  @apply relative max-w-full;
 } */
-@media (max-width:1520px) {
+/* @media (max-width:1520px) {
   .new-wrap {
     height: 490px;
     }
-}
-@media (max-width:1220px) {
+} */
+/* @media (max-width:1220px) {
   #prev {
     right: 4%;
   }
@@ -76,14 +64,70 @@
   .new-wrap {
     height: 410px;
     }
+} */
+/* @media (max-width:998px) {
+  .new-wrap {
+    height: 310px;
+    }
+} */
+/* @media (max-width:767px) {
+  .new-wrap {
+      height: 300px;
+    }
+}  */
+
+/* converting styles to a Tailwindcss */
+
+.page {
+  @apply relative max-w-full;
 }
-@media (max-width:998px) {
+.page button {
+  @apply w-16 h-16 bg-white border border-solid box-border border-gray-100 shadow-md rounded-full text-xl text-gray-400 font-bold absolute z-10 opacity-50;
+  top: calc(50% - 68px/2);
+}
+.cards-slider {
+  @apply relative my-0 mx-auto;
+  max-width: 85%;
+}
+.new-wrap {
+  @apply overflow-hidden box-border block w-full;
+  height: 535px;
+}
+.cards-slider-wrapper {
+  @apply flex transition-transform;
+}
+@screen 2xl {
+  .new-wrap {
+    height: 490px;
+  }
+  .cards-slider {
+    max-width: 70%;
+  }
+  #prev {
+    right: 12%;
+  }
+  #next{
+    left: 12%;
+  }
+}
+@screen xl {
+  #prev {
+    right: 10%;
+  }
+  #next{
+    left: 10%;
+  }
+  .new-wrap {
+    height: 410px;
+    }
+}
+@screen lg {
   .new-wrap {
     height: 310px;
     }
 }
-@media (max-width:767px) {
+@screen md {
   .new-wrap {
-      height: 300px;
-    }
-} 
+    @apply h-80;
+  }
+}
