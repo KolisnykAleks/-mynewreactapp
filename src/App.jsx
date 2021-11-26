@@ -5,6 +5,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Footer from './components/footer';
 import Products from './components/product';
 import Home from './components/homes';
+import { ImagePreloadeder } from './components/ImagePreloader';
 import React from 'react';
 
 
@@ -12,12 +13,13 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      {/* <div className="wrapper"> */}
+      <ImagePreloadeder />
+      <div className="wrapper">
       <Routes> 
             <Route path="/"  element={<Home />} />
             <Route path="/products" element={<Products />}/>
       </Routes>
-      {/* </div> */}
+      </div>
       <Footer />
     </BrowserRouter>
   );
