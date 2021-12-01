@@ -13,7 +13,7 @@ class CarService {
     _transformCars = (res) => {
         return {
             id: res.id,
-            photo: res.photo,
+            photo: res.imageUrl,
             ownerFirstName: res.ownerFirstName,
             name: res.name,
         }
