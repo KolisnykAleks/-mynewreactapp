@@ -1,0 +1,6 @@
+.wrapperPreloader {
+    @apply mx-auto w-1/4;
+}
+.wrapperPreloader img {
+    @apply w-36 h-36;
+}

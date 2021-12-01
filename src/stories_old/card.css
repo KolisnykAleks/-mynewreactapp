@@ -1,0 +1,98 @@
+.cards-items {
+    /* @apply list-none mx-4; */
+    /* flex: 0 0 31.5%; */
+    /* margin-right: 17px;
+    margin-left: 17px; */
+    /* border: 1px solid rgba(94, 100, 100, 0.349); */
+    flex: 0 0 31.5%;  
+    margin-right: 17px;
+    margin-left: 17px;
+    width: 350px;
+    align-items: center;
+    border: 1px solid rgba(94, 100, 100, 0.349);
+} 
+.cards-items img{
+    /* @apply block object-cover w-full m-auto; */
+    /* height: 420px; */
+    max-width: 100%;
+    object-fit: cover;
+    height: 362px;
+    object-fit: cover;
+    margin: auto;
+}
+@screen 2xl {
+    .cards-items {
+    max-width: 30.5%;
+    flex: 0 0 30.5%;
+    }
+    .cards-items img{
+        @apply h-96;
+    }
+}
+@screen xl {
+    .cards-items {
+        flex: 0 0 30.15%;
+    }
+    .cards-items img{
+        @apply h-72;
+    }
+}
+@screen lg {
+    .cards-items {
+        max-width: 29.6%;
+    }
+    .cards-items img{
+        @apply h-48;
+    }
+}
+@screen md {
+    .cards-items {
+        max-width: 28.3333333333%; 
+    }
+}
+.menu__item-text {
+    /* @apply w-4/5 m-0 mx-7; */
+    margin: 0 auto;
+    width: 294px;
+}
+.menu__item-subtitle {
+    @apply h-5 not-italic font-semibold text-xs leading-7 text-gray-800 uppercase tracking-wide;
+    /* position: static;
+    height: 20px;
+    width: 294px;
+    left: 0px;
+    top: 0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+    flex: none;
+    color: #232323;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 8px 0px; */
+
+}
+.menu__item-descr {
+    @apply static h-14 w-72 left-0 top-0 not-italic font-bold text-lg self-stretch overflow-ellipsis leading-5 flex-none flex-grow-0 overflow-hidden top-0 mt-2;
+    /* position: static;
+    height: 56px;
+    width: 294px;
+    left: 0px;
+    top: 0px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    flex: none;
+    color: #232323;
+    align-self: stretch;
+    flex-grow: 0;
+    margin: 8px 0px;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+}
