@@ -1,61 +1,42 @@
 import React, { useState, useEffect, useCallback } from 'react';
-// import axios from 'axios';
-// import { useHistory } from "react-router-dom";
 import PropTypes from 'prop-types';
-// import { createBrowserHistory } from 'history';
+
 import './carForm.css';
 
 
-
-// const defaultCarValues = {
-//     imageUrl: "",
-//     ownerFirstName: "",
-//     name: "",
-// }
-
-
 const CarForm = ({car, onFormSubmit}) => {
-  console.log(car)
-  // const history = createBrowserHistory();
-  // let history = useHistory();
-    // const [carState, setCarState] = useState(defaultCarValues);
-    const [carState, setCarState] = useState({
+  const [carState, setCarState] = useState({
+    imageUrl: "",
+    ownerFirstName: "",
+    name: "",
+  });
+
+  useEffect(() => {
+    if(!car) {
+      return;
+    }
+    setCarState(car)
+  }, [car])
+
+  const {name, ownerFirstName, imageUrl} = carState;
+
+  const handleFormInputChange = useCallback((e) => {
+    setCarState({...carState, [e.target.name]: e.target.value})
+  },[carState])
+
+  const handleFormSubmit = useCallback((e) => {
+    e.preventDefault()
+    onFormSubmit(carState)
+
+    setCarState({
       imageUrl: "",
       ownerFirstName: "",
       name: "",
-    });
-//  console.log(carState)
 
- 
-    useEffect(() => {
-      // console.log('effect')
-      if(!car) {
-        return;
-      }
-      setCarState(car)
-    }, [car])
-    const {name, ownerFirstName, imageUrl} = carState;
-
-    const handleFormInputChange = useCallback((e) => {
-      setCarState({...carState, [e.target.name]: e.target.value})
-    },[carState])
-
-
-    const handleFormSubmit = useCallback((e) => {
-      e.preventDefault()
-      console.log("carState :", carState)
-      onFormSubmit(carState)
-
-      setCarState({
-        imageUrl: "",
-        ownerFirstName: "",
-        name: "",
-
-      })
-    },[onFormSubmit, carState])
+    })
+  },[onFormSubmit, carState])
 
    
-
     return (
       <form onSubmit={handleFormSubmit}>
         <div className="container-input">
@@ -97,16 +78,11 @@ const CarForm = ({car, onFormSubmit}) => {
 
       </form>
     )
-
 }
 
 
 export default CarForm;
 CarForm.propTypes = {
   car: PropTypes.object,
-  onFormSubmit: PropTypes.func.isRequired
+  onFormSubmit: PropTypes.func
 };
-// CarForm.defaultProps = {
-//   car: null,
-//   onFormSubmit: ''
-// };

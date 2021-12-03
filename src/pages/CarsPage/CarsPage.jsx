@@ -1,12 +1,11 @@
 import React from 'react';
 import { Component } from 'react';
-import './car.css';
+import './CarsPage.css';
 import axios from 'axios';
-import CarService from '../services/CarService';
-import Spinner from './spinner/spinner';
-import ErrorMessage from './errorMessage/errorMessages';
+import CarService from '../../services/CarService';
+import Spinner from '../../components/spinner/spinner';
+import ErrorMessage from '../../components/errorMessage/errorMessages';
 import {Link, NavLink} from 'react-router-dom';
-// import Form from './form';
 
 
 class Car extends Component {
@@ -41,13 +40,14 @@ class Car extends Component {
         await axios.delete(`http://localhost:3005/cars/${id}`);
         this.componentDidMount()
       };
+
     editCar = async id => {
         await axios.put(`http://localhost:3005/cars/${id}`);
         
     }
+    
     renderItems(arr) {
         const items =  arr.map((item) => {
-            // console.log(item)
             return (
                 <li className="cards-item" key={item.id}>
                     <img src={item.imageUrl} alt="dog" />
@@ -56,13 +56,9 @@ class Car extends Component {
                         <div className="item-descr">{item.name}</div>
                     </div>
                     <div className="btn-link">
-                        {/* <NavLink to="/products/detail" className="btn-moreDetails ">More</NavLink> */}
                         <NavLink to={`/products/${item.id}`} className="btn-moreDetails ">More</NavLink>
-                        {/* <NavLink to="/" className="btn-del ">Delete</NavLink> */}
-                        {/* <NavLink  className="btn-del " onClick={() => deleteUser(user.id)}>Delete</NavLink> */}
 
                         <a
-                            // to="/products"
                             className="btn-del"
                             onClick={() => this.deleteCar(item.id)}
                         >
@@ -101,7 +97,6 @@ class Car extends Component {
         return (
                 <div className="cards">
                     <div className="title">Cars page</div>
-                    {/* <Form /> */}
                     <div className="cards-container">
                         {errorMessage}
                         {spinner}

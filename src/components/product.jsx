@@ -1,7 +1,7 @@
 import React from "react";
 // import Cards from "./cards";
 // import CreateCarPage from "./CreateCarPage";
-import Car from "./car";
+import Car from "../pages/CarsPage/CarsPage";
 
 function Products() {
     return(

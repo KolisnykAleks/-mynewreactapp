@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './slider.css';
-import Card from './card';
+import './SliderPage.css';
+import Card from '../../components/card';
 
 // class component
 class Slider extends Component {
