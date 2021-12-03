@@ -1,0 +1,21 @@
+form {
+    @apply mt-7 ;
+}
+.form-group {
+    @apply block h-14 w-80 mt-7 ml-7;
+}
+.form-input {
+    @apply h-14 w-80  mx-auto rounded font-semibold text-xl bg-gray-200;
+}
+.btn {
+    @apply block h-14 w-40 mt-7 ml-7  rounded font-semibold text-lg bg-green-100;
+    /*  margin-left: auto;
+    margin-right: auto ; */
+}
+.container-input {
+    @apply grid grid-cols-2 w-auto;
+}
+.container-button {
+    /* @apply ; */
+   
+}

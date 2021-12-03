@@ -1,0 +1,4 @@
+.form-container {
+    @apply  mx-auto;
+    width: 800px;
+}

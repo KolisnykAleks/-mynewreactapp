@@ -16,6 +16,7 @@ function Navbar() {
                     <ul>
                         <li><NavLink activeclassname="active" to='/' >Home</NavLink></li>
                         <li><NavLink activeclassname="active" to='/products'>Products</NavLink></li>
+                        <li><NavLink activeclassname="active" to='/create'>Create</NavLink></li>
                     </ul> 
                 </div>
 

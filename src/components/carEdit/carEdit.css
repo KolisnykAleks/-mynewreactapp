@@ -1,0 +1,6 @@
+.edit-big-image img {
+    @apply h-80 m-12;
+}
+form {
+    @apply m-12;
+}

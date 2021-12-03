@@ -130,6 +130,23 @@
 .dog-grid {
     @apply grid grid-cols-4 justify-around list-none p-6 justify-items-center;
 }
+.btn-moreDetails {
+    @apply h-7 inline inline-block w-32 font-bold bg-green-500 cursor-pointer rounded no-underline p-px;
+    border: 1px solid rgba(28, 41, 41, 0.349);
+}
+.btn-del {
+    @apply h-7 w-10 inline font-bold bg-red-200 cursor-pointer  rounded no-underline p-px;
+    border: 1px solid rgba(28, 41, 41, 0.349);
+}
+.btn-del:hover {
+    box-shadow: 0px 5px 17px rgba(158, 37, 37, 0.1);
+  }
+.btn-moreDetails:hover {
+    box-shadow: 0px 5px 17px rgba(6, 94, 35, 0.1);
+  }
+.btn-link{
+    @apply inline-block ;
+}
 @screen 2xl {
     .dog-grid {
         @apply grid grid-cols-3;
@@ -163,3 +180,4 @@
 .item-descr {
     @apply static h-14 w-72 left-0 top-0 not-italic font-bold text-lg self-stretch overflow-ellipsis leading-5 flex-none flex-grow-0 overflow-hidden top-0 mt-2;
 }
+

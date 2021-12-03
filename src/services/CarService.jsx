@@ -10,10 +10,14 @@ class CarService {
         const res = await this.getData(carUrl);
         return res.map(this._transformCars);
     }
+    getCar = async(id) => {
+        const res = await this.getData(`http://localhost:3005/cars/${id}`);
+        return this._transformCars(res);
+    }
     _transformCars = (res) => {
         return {
-            id: res.id,
-            photo: res.imageUrl,
+            id: res._id,
+            imageUrl: res.imageUrl,
             ownerFirstName: res.ownerFirstName,
             name: res.name,
         }
