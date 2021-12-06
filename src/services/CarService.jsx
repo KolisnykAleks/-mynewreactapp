@@ -20,6 +20,11 @@ class CarService {
             imageUrl: res.imageUrl,
             ownerFirstName: res.ownerFirstName,
             name: res.name,
+            model: res.model,
+            type: res.type,
+            fuelType: res.fuelType,
+            vin: res.vin,
+            color: res.color
         }
     }
 }

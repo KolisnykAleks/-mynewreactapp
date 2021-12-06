@@ -120,7 +120,7 @@
     @apply inline pb-44;
 }
 .title {
-    @apply w-4/5 text-4xl mt-28 ml-12 not-italic font-bold;
+    @apply w-4/5 text-4xl mt-28 ml-24 not-italic font-bold;
     line-height: 54px;
 }
 .cards-item {
@@ -130,12 +130,20 @@
 .dog-grid {
     @apply grid grid-cols-4 justify-around list-none p-6 justify-items-center;
 }
-.btn-moreDetails {
+/* .btn-moreDetails {
     @apply h-7 inline inline-block w-32 font-bold bg-green-500 cursor-pointer rounded no-underline p-px;
+    border: 1px solid rgba(28, 41, 41, 0.349);
+} */
+.btn-moreDetails {
+    @apply h-7 inline mx-6 inline-block font-semibold bg-green-200 cursor-pointer rounded no-underline p-1;
     border: 1px solid rgba(28, 41, 41, 0.349);
 }
 .btn-del {
-    @apply h-7 w-10 inline font-bold bg-red-200 cursor-pointer  rounded no-underline p-px;
+    @apply h-7 w-10 mx-6 inline font-bold bg-red-200 cursor-pointer  rounded no-underline p-1;
+    border: 1px solid rgba(28, 41, 41, 0.349);
+}
+.btn-edit {
+    @apply h-7 w-10 mx-6 inline font-bold bg-yellow-200 cursor-pointer  rounded no-underline p-1;
     border: 1px solid rgba(28, 41, 41, 0.349);
 }
 .btn-del:hover {
@@ -169,7 +177,7 @@
     }
 }
 .cards-item img {
-    @apply max-w-full h-80 object-cover;
+    @apply block max-w-full m-auto h-80 object-cover;
 }
 .item-text {
     @apply w-4/5 m-0 mx-7;

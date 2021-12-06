@@ -1,6 +1,12 @@
+.edit-big-image {
+    @apply  max-w-full;
+}
 .edit-big-image img {
-    @apply h-80 m-12;
+    @apply block h-80 m-12 mx-auto;
 }
 form {
     @apply m-12;
+}
+.car-edit-container {
+    @apply m-7 mx-auto;
 }

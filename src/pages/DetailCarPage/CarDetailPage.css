@@ -1,3 +1,13 @@
 .detail-image img{
     @apply h-80 m-12;
 }
+.list-group-item {
+    @apply m-4 ml-12 list-none font-semibold;
+}
+.btn-back {
+    @apply h-14 m-12 mt-16 inline inline-block w-32 text-white uppercase font-bold bg-green-500 cursor-pointer rounded no-underline p-1;
+    border: 1px solid rgba(28, 41, 41, 0.349);
+}
+.container-detail {
+    @apply m-4;
+}

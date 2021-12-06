@@ -3,13 +3,48 @@ import PropTypes from 'prop-types';
 
 import './carForm.css';
 
+const inputsMeta = {
+  id: {
+    placeholder: "id",
+  },
+  imageUrl: {
+    placeholder: "imageUrl",
+  },
+  name: {
+    placeholder: "name",
+  },
+  model: {
+    placeholder: "model",
+  },
+  ownerFirstName: {
+    placeholder: "ownerFirstName",
+  },
+  ownerLastName: {
+    placeholder: "ownerLastName",
+  },
+  
+  type: {
+    placeholder: "type",
+  },
+  fuelType: {
+    placeholder: "fuelType",
+  },
+  vin: {
+    placeholder: "vin",
+  },
+  color: {
+    placeholder: "color"
+  }
+}
 
-const CarForm = ({car, onFormSubmit}) => {
-  const [carState, setCarState] = useState({
-    imageUrl: "",
-    ownerFirstName: "",
-    name: "",
-  });
+const CarForm = ({submitText, car, onFormSubmit}) => {
+  // const [carState, setCarState] = useState({
+  //   imageUrl: "",
+  //   ownerFirstName: "",
+  //   name: "",
+  //   ownerLastName: ""
+  // });
+  const [carState, setCarState] = useState({})
 
   useEffect(() => {
     if(!car) {
@@ -18,7 +53,7 @@ const CarForm = ({car, onFormSubmit}) => {
     setCarState(car)
   }, [car])
 
-  const {name, ownerFirstName, imageUrl} = carState;
+  // const {name, ownerFirstName, imageUrl, ownerLastName} = carState;
 
   const handleFormInputChange = useCallback((e) => {
     setCarState({...carState, [e.target.name]: e.target.value})
@@ -28,29 +63,53 @@ const CarForm = ({car, onFormSubmit}) => {
     e.preventDefault()
     onFormSubmit(carState)
 
-    setCarState({
-      imageUrl: "",
-      ownerFirstName: "",
-      name: "",
+    // setCarState({
+    //   imageUrl: "",
+    //   ownerFirstName: "",
+    //   name: "",
+    //   ownerLastName: ""
 
-    })
+    // })
   },[onFormSubmit, carState])
 
+  // renderItemsForm(arr) {
+  //   const items = arr.map(item => {
+  //     return (
+  //       <div className="form-group">
+  //           <input
+  //             type="text"
+  //             className="form-input"
+  //             placeholder="Enter Your Name"
+  //             name="name"
+  //             value={item.name}
+  //             onChange={handleFormInputChange}
+  //           />
+  //         </div>
+  //     )
+  //   })
+  // }
    
     return (
+      
       <form onSubmit={handleFormSubmit}>
         <div className="container-input">
-          <div className="form-group">
-            <input
-              type="text"
-              className="form-input"
-              placeholder="Enter Your Name"
-              name="name"
-              value={name}
-              onChange={handleFormInputChange}
-            />
-          </div>
-          <div className="form-group">
+          {
+            Object.entries(inputsMeta).map(
+              ([name, {placeholder}]) => (
+                <div className="form-group" key={name} >
+                  <input
+                  type="text"
+                  className="form-input"
+                  name={name}
+                  placeholder={placeholder}
+                  value={carState[name] || ""}
+                  onChange={handleFormInputChange}
+                />
+                </div>
+              )
+            )
+          }
+          {/* <div className="form-group">
             <input
               type="text"
               className="form-input"
@@ -70,10 +129,22 @@ const CarForm = ({car, onFormSubmit}) => {
               onChange={handleFormInputChange}
             />
           </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-input"
+              placeholder="Enter image's url"
+              name="imageUrl"
+              value={ownerLastName}
+              onChange={handleFormInputChange}
+            />
+          </div> */}
         </div>
         
         <div className="container button">
-          <button className="btn" >Add Car</button>
+          {/* <button className="btn" >Add Car{submitText}</button> */}
+          <button className="btn" >{submitText}</button>
+
         </div>
 
       </form>
@@ -84,5 +155,6 @@ const CarForm = ({car, onFormSubmit}) => {
 export default CarForm;
 CarForm.propTypes = {
   car: PropTypes.object,
-  onFormSubmit: PropTypes.func
+  onFormSubmit: PropTypes.func,
+  submitText: PropTypes.string
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-// import React, {useState} from 'react';
 import { useNavigate } from 'react-router';
 import CarForm from "../../components/carsForm/CarForm";
 import axios from 'axios';
@@ -10,16 +9,15 @@ function CreateCarPage() {
   let navigation = useNavigate();
 
   const onSubmit = async (carState) => {
-    // e.preventDefault()
     await axios.post("http://localhost:3005/cars", carState)
-    // console.log(info)
     navigation("/products")
   };
 
   return (
     <>
       <div className="form-container" >
-        <CarForm onFormSubmit={onSubmit} />
+        <h2 className="title">Create new car</h2>
+        <CarForm onFormSubmit={onSubmit} submitText={"Add car"}/>
       </div>
     </>
   )

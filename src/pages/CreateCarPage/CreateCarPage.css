@@ -2,3 +2,6 @@
     @apply  mx-auto;
     width: 800px;
 }
+.btn {
+    @apply mx-auto;
+}

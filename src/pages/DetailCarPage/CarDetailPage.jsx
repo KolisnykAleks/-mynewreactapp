@@ -10,7 +10,13 @@ const CarDetail = () => {
   const [car, setCar] = useState({
     name: "",
     ownerFirstName: "",
-    imageUrl: ""
+    imageUrl: "",
+    ownerLastName: "",
+    model: "",
+    type: "",
+    fuelType: "",
+    vin: "",
+    color: ""
   });
 
   const { id } = useParams();
@@ -22,8 +28,8 @@ const CarDetail = () => {
     setCar(res.data);
   };
   return (
-    <div className="">
-      <Link className="" to="/products">
+    <div className="container-detail">
+      <Link className="btn-back" to="/products">
         back to all cars
       </Link>
       <div className="detail-image">
@@ -32,8 +38,16 @@ const CarDetail = () => {
       <h1 className="display-4">Car Id: {car._id}</h1>
       <hr />
       <ul className="list-group">
-        <li className="list-group-item">name: {car.name}</li>
-        <li className="list-group-item">ownerFirstName: {car.ownerFirstName}</li>
+        <li className="list-group-item">Name: {car.name}</li>
+        <li className="list-group-item">Owner&apos;s first name: {car.ownerFirstName}</li>
+        <li className="list-group-item">Owner&apos;s last name: {car.ownerLastName}</li>
+        <li className="list-group-item">Model: {car.model}</li>
+        <li className="list-group-item">Type: {car.type}</li>
+        <li className="list-group-item">Type of fuel: {car.fuelType}</li>
+        <li className="list-group-item">Vin: {car.vin}</li>
+        <li className="list-group-item">Color: {car.color}</li>
+
+
       </ul>
     </div>
   );

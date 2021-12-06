@@ -32,14 +32,14 @@ const CarEdit = () => {
 
 
     return (
-      <>
+      <div className="car-edit-container">
         <div className="edit-big-image">
             <h2>Edit car</h2>
             <img src={carState.imageUrl} alt="edit-big-image" />
         </div>
         <hr/>
-        <CarForm onFormSubmit={onSubmit} car={carState}/>
-      </>
+        <CarForm onFormSubmit={onSubmit} car={carState} submitText={"Edit car"}/>
+      </div>
     )
 
 }
