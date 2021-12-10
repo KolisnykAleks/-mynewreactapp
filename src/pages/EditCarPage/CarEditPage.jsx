@@ -1,46 +1,45 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router';
 import CarForm from '../../components/carsForm/CarForm';
+import { useDispatch } from 'react-redux';
+import { fetchCarLoad, fetchCarEdit } from '../CarsPage/CarSlice';
+import { unwrapResult } from '@reduxjs/toolkit'
 
 import './CarEditPage.css';
 
 const CarEdit = () => {
   let navigation = useNavigate();
-
+  const dispatch = useDispatch();
   const { id } = useParams();
-    const [carState, setCarState] = useState({
-      imageUrl: "",
-      ownerFirstName: "",
-      name: "",
-    });
+  const [carState, setCarState] = useState({});
+
 
   useEffect(() => {
-      loadCar()
-    },[])
+    dispatch(fetchCarLoad(id))
+      .then(unwrapResult)
+      .then((res) => {
+        setCarState(res)
+      })
+  }, [])
 
- const loadCar = async () => {
-        const result = await axios.get(`http://localhost:3005/cars/${id}`);
-        setCarState(result.data);
-      };
-   
+
   const onSubmit = async (carState) => {
-      await axios.put(`http://localhost:3005/cars/${id}`, carState);
-      navigation("/products")
-    };
+    await dispatch(fetchCarEdit(carState))
+    navigation("/products")
+  }
 
 
-    return (
-      <div className="car-edit-container">
-        <div className="edit-big-image">
-            <h2>Edit car</h2>
-            <img src={carState.imageUrl} alt="edit-big-image" />
-        </div>
-        <hr/>
-        <CarForm onFormSubmit={onSubmit} car={carState} submitText={"Edit car"}/>
+  return (
+    <div className="car-edit-container">
+      <div className="edit-big-image">
+        <h2>Edit car</h2>
+        <img src={carState.imageUrl} alt="edit-big-image" />
       </div>
-    )
+      <hr />
+      <CarForm onFormSubmit={onSubmit} car={carState} submitText={"Edit car"} />
+    </div>
+  )
 
 }
 

@@ -4,30 +4,29 @@ import PropTypes from 'prop-types';
 import './carForm.css';
 
 const inputsMeta = {
-  id: {
-    placeholder: "id",
-  },
+  // id: {
+  //   placeholder: "id",
+  // },
   imageUrl: {
     placeholder: "imageUrl",
-  },
-  name: {
-    placeholder: "name",
   },
   model: {
     placeholder: "model",
   },
-  ownerFirstName: {
-    placeholder: "ownerFirstName",
+  name: {
+    placeholder: "name",
   },
-  ownerLastName: {
-    placeholder: "ownerLastName",
-  },
-  
   type: {
     placeholder: "type",
   },
+  ownerFirstName: {
+    placeholder: "ownerFirstName",
+  },
   fuelType: {
     placeholder: "fuelType",
+  },
+  ownerLastName: {
+    placeholder: "ownerLastName",
   },
   vin: {
     placeholder: "vin",

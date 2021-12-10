@@ -1,17 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import CarForm from "../../components/carsForm/CarForm";
-import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { fetchCarCreate } from '../CarsPage/CarSlice';
 
 import './CreateCarPage.css';
 
 function CreateCarPage() {
   let navigation = useNavigate();
 
-  const onSubmit = async (carState) => {
-    await axios.post("http://localhost:3005/cars", carState)
+  const dispatch = useDispatch()
+
+  const onSubmit = (carState) => {
+    dispatch(fetchCarCreate(carState))
     navigation("/products")
-  };
+  }
 
   return (
     <>

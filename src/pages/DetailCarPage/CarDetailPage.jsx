@@ -2,7 +2,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
-import axios from "axios";
+import { unwrapResult } from '@reduxjs/toolkit'
+
+import { useDispatch } from 'react-redux';
+
+import { fetchCarDetail } from "../CarsPage/CarSlice";
 
 import './CarDetailPage.css';
 
@@ -19,14 +23,21 @@ const CarDetail = () => {
     color: ""
   });
 
+
+
   const { id } = useParams();
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    loadCar();
+    dispatch(fetchCarDetail(id))
+      .then(unwrapResult)
+      .then((res) => {
+        setCar(res)
+      })
+      .catch((res) => console.log({ error: res }))
+
   }, []);
-  const loadCar = async () => {
-    const res = await axios.get(`http://localhost:3005/cars/${id}`);
-    setCar(res.data);
-  };
+
   return (
     <div className="container-detail">
       <Link className="btn-back" to="/products">
@@ -46,8 +57,6 @@ const CarDetail = () => {
         <li className="list-group-item">Type of fuel: {car.fuelType}</li>
         <li className="list-group-item">Vin: {car.vin}</li>
         <li className="list-group-item">Color: {car.color}</li>
-
-
       </ul>
     </div>
   );
